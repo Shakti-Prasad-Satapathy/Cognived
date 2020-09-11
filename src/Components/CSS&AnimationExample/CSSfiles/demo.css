@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+#div2 {
+    background-color: rgb(40, 145, 13);
+    height: 300px;
+    width: 40%;
+    /* position: fixed; */
+    top: 100px;
+    font-size: "0.1em";
+}
+#div2:hover {
+    background-color: rgb(206, 102, 17);
+} 
+#div2:hover::after, #div2:hover::before {
+    content: "hello";
+}
+
+/* h1{
+    font-size: 30px;
+}
+h2{
+    font-size: 30px;
+}
+.div1{
+    font-size: 30px;
+} */
+
+h1, h2,.div1{
+    font-size: 30px;
+}
+
+.div3 {
+    padding: 40px;
+    background-color: rgb(151, 126, 151);
+    width: 50%;
+}
+
+.div3 .div4 {
+    background-color: violet;
+    height: 100px;
+}
+/* .div3 h1,h2 {
+    background-color: tomato;
+} */
+.div3 h1, .div3 h2 {
+    background-color: tomato;
+}
+
+.div3 .div4 p{
+    background-color: yellow;
+}
+
+/* ul {
+display: flex;
+flex-direction: row
+} */
+.div1 {
+    background:pink;
+    height:100px;
+    width:30%
+}
+@media screen and (max-width:1200px){
+    /* .div3 .div4 p{
+        background-color: rgb(41, 45, 88);
+    } */
+    /* .div1{
+        background: lightseagreen
+    } */
+}
+
+@media screen and (min-width:769px) and (max-width:1024px){
+    /* .div3 .div4 p{
+        background-color: rgb(25, 143, 40);
+    } */
+    .div1{
+        background: lightseagreen
+    }
+}
+li {
+    display: inline;
+}
+/* 320px-480===mobile
+481-768 ==== ipad/tab
+769-1024 ===== small size laptop
+1025-1200 ==== large screen / desktop
+1201 or more   tv */

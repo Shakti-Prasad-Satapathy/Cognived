@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import CurrencyConverter from "./Components/Assignment1/JSXfile/CurrencyConverter"
+// import Home from "./Components/CSS&AnimationExample/JSXfiles/HomePage"
+// import Ass2 from "./Components/Assignment2/JSXfile/AssignmentTwo"
+// import Grid from "./Components/CSS&AnimationExample/JSXfiles/Collage"
+// import Demo from "./Components/CSS&AnimationExample/JSXfiles/demo"
+// import Demo from "./Components/vaibhavi"
+import Ass3 from "./Components/Assignment3/JSX/Assignment3"
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+        {/* <CurrencyConverter /> */}
+        {/* <Home /> */}
+        {/* <Ass2 /> */}
+        {/* < Grid /> */}
+        {/* <Demo /> */}
+        <Ass3 />
     </div>
   );
 }

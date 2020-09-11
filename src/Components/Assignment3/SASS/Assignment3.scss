@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$h1color: #5B75F0;
+marquee {
+    background: $h1color;
+    height: 35px;
+    margin-top: 15px;
+    font-size: 30px;
+
+}
+h1{
+    text-align:center;
+    margin-top: 10px;
+    color: $h1color;
+}
+p {
+    display: inline;
+}
+.inputs{
+    display: flex;
+    justify-content: space-around;
+    margin: 35px 100px;
+}
+
+.displa_box{
+    border: 5px solid $h1color;
+    height: 300px;
+    margin: 0 10%;
+    div{
+        display: flex;
+        justify-content: space-around;
+        margin: 2% 15%;
+    }
+}

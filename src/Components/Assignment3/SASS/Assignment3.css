@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+marquee {
+  background: #5B75F0;
+  height: 35px;
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  color: #5B75F0;
+}
+
+p {
+  display: inline;
+}
+
+.inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 35px 100px;
+}
+
+.displa_box {
+  border: 5px solid #5B75F0;
+  height: 300px;
+  margin: 0 10%;
+}
+
+.displa_box div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2% 15%;
+}
+/*# sourceMappingURL=Assignment3.css.map */

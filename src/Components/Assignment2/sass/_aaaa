@@ -1,0 +1,5 @@
+@mixin commonCode ($display, $justify, $width, $height ) {
+    display: $display;
+    justify-content: $justify;
+    width: $width;
+    height: $height;
