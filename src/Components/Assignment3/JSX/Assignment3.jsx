@@ -5,6 +5,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 
 
 import '../SASS/Assignment3.css'
@@ -19,7 +24,6 @@ export default class Assignment3 extends Component {
         this.hour = this.today.getHours();
         this.minute = this.today.getMinutes()
 
-        console.log(this.hour, "JJJJJJJJJJJJJJ");
         this.state = {
             title: "",
             first_name: "",
@@ -40,8 +44,14 @@ export default class Assignment3 extends Component {
             [e.target.name]: e.target.value
         })
     }
+    handelAgeColor = (e) => {
+        // alert("redio selected")
+        // console.log(e.target.value , "----------");
+        this.setState({
+            age_color: e.target.value
+        })
+    }
     handelSubmit = () => {
-        console.log(parseInt(this.state.date_of_joining.slice(8)), "ppppppp", this.day);
         if (this.minute === 0) {
             this.hour = Math.abs(this.hour - 9)
         }
@@ -65,45 +75,26 @@ export default class Assignment3 extends Component {
             alert("Please Enter Valid Credentials")
         }
     }
-    handelAgeColor = (e) => {
-        console.log("kkkkkkkkkkkkk");
-        if (e.target.name === "male") {
-            alert("male")
-            this.setState({
-                age_color: "blue"
-            })
-        }
-        else if (e.target.name === "female") {
-            alert("female")
-            this.setState({
-                age_color: "pink"
-            })
-        }
-        else if (e.target.name === "others") {
-            alert("others")
 
-            this.setState({
-                age_color: "orange"
-            })
-        }
-    }
 
     render() {
 
         return (
             <div>
+
+
                 <h1>Hello Clappers!!!</h1>
                 <marquee >Enter the details and get your joining status</marquee>
                 <form noValidate autoComplete="off">
                     <div className="inputs">
 
-                        <Select>
+                        <Select name='title' onChange={this.handelChange}  >
                             <MenuItem disabled>
                                 Titles
                             </MenuItem>
-                            <MenuItem value="Mrs." name='title' onChange={this.handelChange}>Mrs.</MenuItem>
-                            <MenuItem value="Mr." name='title' onChange={this.handelChange} >Mr.</MenuItem>
-                            <MenuItem value="Jr." name='title' onChange={this.handelChange} >Jr.</MenuItem>
+                            <MenuItem value="Mrs."  >Mrs.</MenuItem>
+                            <MenuItem value="Mr."  >Mr.</MenuItem>
+                            <MenuItem value="Jr."  >Jr.</MenuItem>
                         </Select>
                         <TextField value={this.state.first_name} name="first_name" label="First Name" onChange={this.handelChange} />
                         <TextField value={this.state.last_name} name="last_name" label="Last Name" onChange={this.handelChange} />
@@ -134,11 +125,30 @@ export default class Assignment3 extends Component {
                     </div>
 
                     <div className="inputs">
-                        <ButtonGroup size="small" color="primary" aria-label="large outlined primary button group" >
-                            <Button name="male" onClick={this.handelAgeColor} >Male</Button>
-                            <Button name="female" onClick={this.handelAgeColor}  >Female</Button>
-                            <Button name="others" onClick={this.handelAgeColor}  >Others</Button>
-                        </ButtonGroup>
+                        <RadioGroup row aria-label="position" name="age_color" defaultValue="top">
+                            <FormControlLabel
+                                value="blue"
+                                control={<Radio style={{ color: "blue" }} />}
+                                label="Male"
+                                labelPlacement="start"
+                                onClick={this.handelChange}
+                            />
+                            <FormControlLabel
+                                value="pink"
+                                control={<Radio style={{ color: "pink" }} />}
+                                label="Female"
+                                labelPlacement="start"
+                                onClick={this.handelChange}
+                            />
+                            <FormControlLabel
+                                value="red"
+                                control={<Radio style={{ color: "red" }} />}
+                                label="Others"
+                                labelPlacement="start"
+                                onClick={this.handelChange}
+                            />
+
+                        </RadioGroup>
                         <TextField label="Time Color" value={this.state.time_color} name="time_color" onChange={this.handelChange} />
                         <Button variant="contained" color="primary" onClick={this.handelSubmit}>Submit</Button>
 

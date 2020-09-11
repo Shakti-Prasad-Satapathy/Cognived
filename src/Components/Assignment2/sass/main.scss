@@ -19,6 +19,7 @@
 
 
 }
+$box-background :#fad4c5;
 .box {
     @include commonCode ('', "", 70%, 25rem );
 
@@ -26,7 +27,7 @@
     // width: 20rem;
     // height: 25rem;
     transform: rotateY(30deg);
-    background-color: #fad4c5;
+    background-color: $box-background;
     box-shadow: 5px 4px 10px 5px black;
     text-align: center;
     margin-top: 40%;
