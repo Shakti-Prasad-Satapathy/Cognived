@@ -2498,11 +2498,23 @@ input[type="file"].field-style1 {
 
 .float-image {
  
- 
- 
-  transform: translatey(0px);
+  animation-duration: 2s;
+  animation-name: slidein;
+    transition: transform .5s;
+  /* transform: translatey(0px);
   -webkit-animation: float 2s ease-in-out infinite;
-          animation: float 2s ease-in-out infinite;
+          animation: float 2s ease-in-out infinite; */
+}
+.float-image:hover{
+  transform: scale(1.1)
+}
+@keyframes slidein {
+  from {
+    width: 80%;
+  }
+  to {
+    width: 100%;
+  }
 }
 .header-fixed header {
     position: fixed;
