@@ -119,43 +119,7 @@
          </div>
       </section>
       <!--Contact  Details Section Ends Here -->
-
-     <?php 
-        if(isset($_POST['submit'])){
-            $to = "contactus@cognived.com"; // this is your Email address
-            $from = $_POST['email']; // this is the sender's Email address
-            $name = $_POST['name'];
-            $phone = $_POST['phone'];
-            $company = $_POST['company'];
-            
-            $subject = "Contact Form";
-            $message = "Name:". $name .  "<br>"."Phone: ". $phone . "<br>"."Company: ". $company . "<br>". $_POST['describe'];
-            
-            
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            
-            
-            
-                if(mail($to,$subject,$message,$headers)){
-                        echo "<script> Swal.fire(
-                        'Success!',
-                        'Your query successfully submitted.',
-                        'success'
-                        ) </script>";
-                }
-                else{
-                        echo "<script> Swal.fire(
-                        'Error!',
-                        'Something went wrong!',
-                        'warning'
-                        ) </script>";
-                }
-            
-        }
-    ?>
-
-
+      <!-- <?php include('contactUs.php');?> -->
 
       <!-- Contact Form Starts Here -->
       <section class="pad-top-80 pad-bot-60 bg-sec2" id="contact-us">
@@ -176,7 +140,7 @@
                <div class="tab-pane active" id="project-tab" role="tabpanel">
                   <div class="block-element">
                      <div class="contact-form1">
-                         <form method="post">
+                         <form method="post" action = <?php include('contactUs.php');?>>
                            <div class="row">
                               <div class="col-md-6 col-lg-6 col-sm-12 col-12">
                                  <div class="form-field1">
