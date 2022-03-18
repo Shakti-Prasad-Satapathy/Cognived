@@ -1,37 +1,34 @@
 <?php 
-        if(isset($_POST['submit'])){
-            $to = "contactus@cognived.com"; // this is your Email address
-            $from = $_POST['email']; // this is the sender's Email address
-            $name = $_POST['name'];
-            $phone = $_POST['phone'];
-            $company = $_POST['company'];
-            
-            $subject = "Contact Form";
-            $message = "Name:". $name .  "<br>"."Phone: ". $phone . "<br>"."Company: ". $company . "<br>". $_POST['describe'];
-            
-            
-            $headers = "MIME-Version: 1.0" . "\r\n";
-            $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-            
-            
-            
-                if(mail($to,$subject,$message,$headers)){
-                        echo "<script> Swal.fire(
-                        'Success!',
-                        'Your query successfully submitted.',
-                        'success'
-                        ) </script>";
-                }
-                else{
-                        echo "<script> Swal.fire(
-                        'Error!',
-                        'Something went wrong!',
-                        'warning'
-                        ) </script>";
-                }
-            
+    if(isset($_POST['form_no']) && $_POST['form_no'] == '1'){
+        $to = "contactus@cognived.com"; // this is your Email address
+        $from = $_POST['email']; // this is the sender's Email address
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+        $company = $_POST['company'];
+        
+        $subject = "Contact Form";
+        $message = "Name:". $name .  "<br>"."Phone: ". $phone . "<br>"."Company: ". $company . "<br>". $_POST['describe'];
+        
+        
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+             
+        if(mail($to,$subject,$message,$headers)){
+            echo json_encode(array('status' => 'success'));
         }
-        if(isset($_POST['submit2'])) {
+        else{
+            echo json_encode(array('status' => 'error'));
+        }
+            
+    }
+    
+    
+?>
+    
+    
+     <?php 
+               
+            if(isset($_POST['form_no2']) && $_POST['form_no2'] == '2') {
                 
                 $filenameee =  $_FILES['attachment']['name'];
                 $fileName = $_FILES['attachment']['tmp_name']; 
@@ -73,20 +70,13 @@
                
                 //SEND Mail
                      if(mail($mailto, $subject, $body, $headers)){
-                            echo "<script> Swal.fire(
-                              'Success!',
-                              'Your query successfully submitted.',
-                              'success'
-                            ) </script>";
+                            echo json_encode(array('status' => 'success'));
                     }
                     else{
-                            echo "<script> Swal.fire(
-                              'Error!',
-                              'Something went wrong!',
-                              'warning'
-                            ) </script>";
+                            echo json_encode(array('status' => 'error'));
                     }
             
             }
 
-    ?>
+        ?>
+        
